@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 const logger = require('./middleware/logger');
 const userRoutes = require('./routes/users');
+app.use(express.json()); // <- THIS is critical!
 app.use(logger);
 app.use('/users', userRoutes);
 app.listen(port, () => {
